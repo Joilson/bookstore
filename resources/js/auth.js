@@ -4,11 +4,8 @@ import {useRouter} from "vue-router";
 
 const apiHost = import.meta.env.VITE_API_HOST;
 
-const isLogged = ref(false);
-
 export const useAuth = () => {
     const errors = ref({});
-    const unauthorized = ref({value: false});
     const router = useRouter();
 
     const createUser = async (formData) => {
@@ -37,7 +34,6 @@ export const useAuth = () => {
 
             const data = response.data;
             localStorage.setItem("token", data.token);
-            isLogged.value = true;
 
             window.location = '/authors/list';
         } catch (error) {
@@ -45,14 +41,13 @@ export const useAuth = () => {
             if (error.response && error.response.data.errors) {
                 errors.value = error.response.data.errors;
             } else {
-                errors.value = {unauthorized: true};
+                errors.value = {unauthorized: error.response.data.error};
             }
             console.error(error.response);
         }
     };
 
     const logout = () => {
-        isLogged.value = false;
         errors.value = {};
         localStorage.removeItem("token");
 
@@ -60,9 +55,7 @@ export const useAuth = () => {
     };
 
     return {
-        isLogged,
         errors,
-        unauthorized,
         createUser,
         authenticate,
         logout,

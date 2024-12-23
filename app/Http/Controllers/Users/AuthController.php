@@ -33,7 +33,7 @@ class AuthController extends Controller
 
             return response()->json($out);
         } catch (UnauthorizedUser $exception) {
-            return response()->json(['error' => 'Invalid credentials'], 401);
+            return response()->json(['error' => __('auth.failed')], 401);
         }
     }
 }

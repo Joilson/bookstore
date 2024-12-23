@@ -97,17 +97,19 @@ export default function useRequest() {
             errors.value = {};
             router.push({name: identifyList(resource)});
         } catch (error) {
-            handleRequestError()
+            handleRequestError(error)
         }
     };
 
     const handleRequestError = function (error) {
         console.error(error)
-        if (error.response.data.errors) {
+        if ('errors' in error.response.data) {
             errors.value = error.response.data.errors;
         } else {
             errors.value = {generic: error.response.data.error};
         }
+
+        console.log(error)
     };
 
     return {

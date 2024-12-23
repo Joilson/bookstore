@@ -32,7 +32,7 @@ onMounted(() => (errors.value = {}));
                     v-model="formData.password"
                 />
                 <p v-if="errors.password" class="error">{{ errors.password[0] }}</p>
-                <p v-if="errors.unautorized" class="error">Invalid credentials</p>
+                <p v-if="errors.unauthorized" class="error">{{ errors.unauthorized}}</p>
             </div>
 
 

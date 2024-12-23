@@ -12,20 +12,20 @@ class ErrorHandler extends ExceptionHandler
     public function render($request, \Throwable $e)
     {
         if ($e instanceof ResourceDuplicated) {
-            return response()->json(['error' => 'Already exists other register with some data'], 422);
+            return response()->json(['error' => __('validation.already_exists_in_other_register')], 422);
         }
 
         if ($e instanceof ResourceNotFound) {
-            return response()->json(['error' => 'Resource not found'], 400);
+            return response()->json(['error' => __('validation.resource_not_found')], 400);
         }
 
         if ($e instanceof FailDuringPersistence) {
             Log::error('Fail during persistence', [
-                    'exception' => $e,
-                    'previous' => $e->getPrevious()
-                ]);
+                'exception' => $e,
+                'previous' => $e->getPrevious()
+            ]);
 
-            return response()->json(['error' => 'Fail during persistence'], 500);
+            return response()->json(['error' => __('validation.persistence_failed')], 500);
         }
 
         return parent::render($request, $e);
