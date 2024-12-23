@@ -3,6 +3,8 @@
 Up project with Joilson provided settings
 
 ```
+composer install
+
 ./bin/setup
 ```
 
