@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+echo ""
+echo "Preparando as variaveis de ambiente"
+echo ""
+cp .env.example .env
+
+echo ""
+echo "Subindo o ambiente docker com laravel sail \n\n"
+echo ""
+./vendor/bin/sail up -d
+
+echo ""
+printf "\n Instalando as dependencias do PHP \n"
+echo ""
+./vendor/bin/sail composer install
+
+echo ""
+echo "Configurando o banco de dados"
+echo ""
+./vendor/bin/sail artisan migrate
+
+echo ""
+echo "Atualizando o openapi doc"
+echo ""
+./vendor/bin/openapi --output ./public/openapi.json app
+
+echo ""
+echo "API Doc: http://localhost:8082/api/doc"
+echo ""
+
+echo "Rodando os testes e verificando a cobertura de testes"
+./vendor/bin/sail php artisan test --coverage
+echo ""
+
+echo "Instalando as dependencias do front"
+./vendor/bin/sail npm install
+echo ""
+
+echo "Subindo o sevidor do front \n\n"
+./vendor/bin/sail npm run dev

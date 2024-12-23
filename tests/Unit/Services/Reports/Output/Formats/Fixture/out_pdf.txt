@@ -1,0 +1,3 @@
+Authors performance
+NameSubjects_countBooks_countPublisher_countFirst_publicationLast_publicationMost_expensive_priceCheapest_priceBook_titles
+Author 1 1	1	1 2024-12-22 01:36:292024-12-22 01:36:29 25.50	125.32 Book title 1

@@ -1,0 +1,2 @@
+name,subjects_count,books_count,publisher_count,first_publication,last_publication,most_expensive_price,cheapest_price,book_titles
+"Author 1",1,1,1,"2024-12-22 01:36:29","2024-12-22 01:36:29",25.50,125.32,"Book title 1"
