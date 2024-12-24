@@ -16,7 +16,7 @@ onMounted(async () => (subject.value = await get(resource, route.params.id)));
 <template>
     <main>
         <div v-if="subject">
-            <h1 class="title">Atualizar Descriçao</h1>
+            <h1 class="title">Atualizar Assunto</h1>
 
             <form @submit.prevent="update(resource, subject.id, subject)" class="w-1/2 mx-auto space-y-6">
                 <div>

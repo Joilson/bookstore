@@ -13,7 +13,7 @@ onMounted(async () => (subjects.value = await getAll(resource)));
 
 <template>
     <main>
-        <h1 class="title">Autores</h1>
+        <h1 class="title">Assuntos</h1>
         <div>
             <RouterLink :to="{ name: 'createSubject' }" class="btn btn-primary mb-10">Adicionar</RouterLink>
         </div>
