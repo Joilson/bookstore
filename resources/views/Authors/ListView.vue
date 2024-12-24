@@ -2,7 +2,6 @@
 import useRequest from "../../js/requests.js";
 import {onMounted, ref} from "vue";
 import {RouterLink} from "vue-router";
-import {useAuth} from "../../js/auth.js";
 
 const {remove, getAll} = useRequest();
 const authors = ref([]);

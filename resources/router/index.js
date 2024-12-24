@@ -91,7 +91,7 @@ const router = createRouter({
     ],
 });
 
-router.beforeEach(async (to, from) => {
+router.beforeEach(async () => {
     const token = localStorage.getItem("token")
     if (token === false) {
         return {name: "home"};

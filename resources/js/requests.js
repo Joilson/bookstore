@@ -4,11 +4,6 @@ import {useRouter} from "vue-router";
 
 const apiHost = import.meta.env.VITE_API_HOST;
 
-const headers = {
-    "Content-Type": "application/json",
-    "Authorization": `Bearer ${localStorage.getItem("token")}`
-};
-
 const identifyList = function (resource) {
     return 'list' + resource.charAt(0).toUpperCase() + resource.slice(1, -1);
 };
@@ -21,7 +16,7 @@ export default function useRequest() {
         const interval = 100;
         const start = Date.now();
 
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const checkToken = setInterval(() => {
                 if (localStorage.getItem("token")) {
                     clearInterval(checkToken);

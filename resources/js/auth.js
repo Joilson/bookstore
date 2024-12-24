@@ -6,7 +6,6 @@ const apiHost = import.meta.env.VITE_API_HOST;
 
 export const useAuth = () => {
     const errors = ref({});
-    const router = useRouter();
 
     const createUser = async (formData) => {
         try {

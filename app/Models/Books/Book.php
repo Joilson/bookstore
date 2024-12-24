@@ -23,6 +23,9 @@ use OpenApi\Attributes as OA;
     ],
     type: 'object'
 )]
+/**
+ * @para
+ */
 class Book extends Model
 {
     use HasFactory;

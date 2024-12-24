@@ -8,7 +8,7 @@ use App\Models\Books\Subject;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Author>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<Book>
  */
 class BookFactory extends Factory
 {

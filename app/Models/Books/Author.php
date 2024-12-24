@@ -9,10 +9,10 @@ use OpenApi\Attributes as OA;
 #[OA\Schema(
     title: 'Author',
     properties: [
-    new OA\Property(property: 'name', type: 'string'),
-    new OA\Property(property: 'updated_at', type: 'datetime'),
-    new OA\Property(property: 'created_at', type: 'datetime'),
-    new OA\Property(property: 'id', type: 'integer'),
+        new OA\Property(property: 'name', type: 'string'),
+        new OA\Property(property: 'updated_at', type: 'datetime'),
+        new OA\Property(property: 'created_at', type: 'datetime'),
+        new OA\Property(property: 'id', type: 'integer'),
     ],
     type: 'object'
 )]

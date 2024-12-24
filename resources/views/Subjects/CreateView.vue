@@ -1,6 +1,5 @@
 <script setup>
 import useRequest from "../../js/requests.js";
-import {storeToRefs} from "pinia";
 import {reactive} from "vue";
 
 const {create, errors} = useRequest();
