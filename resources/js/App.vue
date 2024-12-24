@@ -18,7 +18,7 @@ const token = localStorage.getItem("token")
                 <RouterLink :to="{ name: 'listAuthor' }" class="nav-link">Autores</RouterLink>
                 <RouterLink :to="{ name: 'listSubject' }" class="nav-link">Assuntos</RouterLink>
                 <RouterLink :to="{ name: 'listBook' }" class="nav-link">Livros</RouterLink>
-                <RouterLink :to="{ name: 'reports' }" class="nav-link">Report</RouterLink>
+                <RouterLink :to="{ name: 'reports' }" class="nav-link">Relatorio</RouterLink>
 
 
                 <button @click="logout" class="nav-link">Sair</button>
