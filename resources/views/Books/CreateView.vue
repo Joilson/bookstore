@@ -40,7 +40,7 @@ onMounted(async () => (subjects.value = await getAll('subjects')));
 
                 <div class="form-group">
                     <label>Ediçao</label>
-                    <input type="text" required placeholder="Ediçao" v-model.number="formData.edition"
+                    <input class="form-control" type="number" required placeholder="Ediçao" v-model.number="formData.edition"
                            oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
                     <p v-if="errors.edition" class="error">{{ errors.edition[0] }}</p>
                 </div>
