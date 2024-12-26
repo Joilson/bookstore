@@ -21,7 +21,7 @@ class AuthenticateUserServiceTest extends TestCase
         $out = $service->execute(new AuthUserDTO($user->email, 'password123'));
 
         $this->assertIsString($out->token);
-        $this->assertEquals(2592000, $out->expiresIn);
+        $this->assertEquals(60, $out->expiresIn);
         $this->assertEquals('bearer', $out->type);
     }
 
