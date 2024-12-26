@@ -63,7 +63,6 @@ class AuthorController extends Controller
     }
 
     #[OA\Get(path: '/api/authors', summary: 'List all Authors', security: [["BearerAuth" => []]], tags: ['authors'])]
-    #[OA\PathParameter(name: 'id', description: 'Id of the author')]
     #[OA\Response(
         response: 200,
         description: 'Success',

@@ -68,7 +68,6 @@ class SubjectController extends Controller
     }
 
     #[OA\Get(path: '/api/subjects', summary: 'List all Subjects', security: [["BearerAuth" => []]], tags: ['subjects'])]
-    #[OA\PathParameter(name: 'id', description: 'Id of the subject')]
     #[OA\Response(
         response: 200,
         description: 'Success',
@@ -89,7 +88,7 @@ class SubjectController extends Controller
         return response()->json(['data' => $subjectRepository->all()]);
     }
 
-    #[OA\Delete(path: '/api/subjects', summary: 'Delete Subject', security: [["BearerAuth" => []]], tags: ['subjects'])]
+    #[OA\Delete(path: '/api/subjects/{id}', summary: 'Delete Subject', security: [["BearerAuth" => []]], tags: ['subjects'])]
     #[OA\PathParameter(name: 'id', description: 'Id of the subject')]
     #[OA\Response(response: 200, description: 'Success',)]
     #[OA\Response(response: 422, description: 'Unprocessable Entity')]

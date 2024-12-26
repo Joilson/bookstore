@@ -12,13 +12,6 @@
                 ],
                 "summary": "List all Authors",
                 "operationId": "9ddd2673eddfc76fec3bc5eab3a55f60",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the author"
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Success",
@@ -401,13 +394,6 @@
                 ],
                 "summary": "List all Subjects",
                 "operationId": "26bbe2e175802183241930c0ebb0c6a9",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subject"
-                    }
-                ],
                 "responses": {
                     "200": {
                         "description": "Success",
@@ -473,36 +459,6 @@
                     },
                     "422": {
                         "description": "Unprocessable Entity"
-                    }
-                },
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ]
-            },
-            "delete": {
-                "tags": [
-                    "subjects"
-                ],
-                "summary": "Delete Subject",
-                "operationId": "18b76cb5cb2d4b0366371f44fd983a21",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the subject"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    },
-                    "422": {
-                        "description": "Unprocessable Entity"
-                    },
-                    "400": {
-                        "description": "Resource not found"
                     }
                 },
                 "security": [
@@ -583,6 +539,36 @@
                     },
                     "422": {
                         "description": "Unprocessable Entity"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "subjects"
+                ],
+                "summary": "Delete Subject",
+                "operationId": "19198e07397ac5b53230b90e17841c4a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the subject"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "400": {
+                        "description": "Resource not found"
                     }
                 },
                 "security": [
