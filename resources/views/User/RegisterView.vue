@@ -17,7 +17,7 @@ onMounted(() => (errors.value = {}));
 
 <template>
     <main>
-        <h1 class="title">Register a new user</h1>
+        <h1 class="title">Registrar</h1>
 
         <form
             @submit.prevent="createUser(formData)"
