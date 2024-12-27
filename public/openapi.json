@@ -269,33 +269,6 @@
                         "BearerAuth": []
                     }
                 ]
-            },
-            "delete": {
-                "tags": [
-                    "books"
-                ],
-                "summary": "Remove the book",
-                "operationId": "26a97b55d197e37779144274e7a3ccfb",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Id of the book"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success"
-                    },
-                    "422": {
-                        "description": "Unprocessable Entity"
-                    }
-                },
-                "security": [
-                    {
-                        "BearerAuth": []
-                    }
-                ]
             }
         },
         "/api/books/{id}": {
@@ -375,6 +348,33 @@
                                 }
                             }
                         }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    }
+                },
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "books"
+                ],
+                "summary": "Remove the book",
+                "operationId": "51ce0ee1d010723d5bd99b09e4a3c0fd",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the book"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
                     },
                     "422": {
                         "description": "Unprocessable Entity"
