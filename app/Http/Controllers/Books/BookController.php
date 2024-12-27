@@ -74,7 +74,7 @@ class BookController extends Controller
         return response()->json(['data' => BookResource::collection($bookRepository->all())]);
     }
 
-    #[OA\Delete(path: '/api/books', summary: 'Remove the book', security: [["BearerAuth" => []]], tags: ['books'])]
+    #[OA\Delete(path: '/api/books/{id}', summary: 'Remove the book', security: [["BearerAuth" => []]], tags: ['books'])]
     #[OA\PathParameter(name: 'id', description: 'Id of the book')]
     #[OA\Response(response: 200, description: 'Success',)]
     #[OA\Response(response: 422, description: 'Unprocessable Entity')]
